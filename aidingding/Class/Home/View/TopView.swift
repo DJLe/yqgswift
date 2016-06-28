@@ -14,7 +14,13 @@ class TopView: UIView {
     
     private var flowLayout : UICollectionViewFlowLayout!
     
-    var cell:UICollectionViewCell? = nil
+    var cell:TopCell? = nil
+    
+    var cellModelList = [HomeCategoryCellModel](){
+        didSet{
+            categoryCollectionView.reloadData()
+        }
+    }
     
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -29,6 +35,9 @@ class TopView: UIView {
         
         setUpCollectionView()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(TopView.loadData(_:)),
+                                                         name: "loadDataNotification", object: nil)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,27 +48,39 @@ class TopView: UIView {
     
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .Horizontal
-        categoryCollectionView = UICollectionView(frame: CGRectMake(0, 0, ScreenWidth - 15, 44), collectionViewLayout: flowLayout)
+        flowLayout.itemSize = CGSizeMake((ScreenWidth-30)/3, 22)
+        categoryCollectionView = UICollectionView(frame: CGRectMake(0, 10, ScreenWidth, 22), collectionViewLayout: flowLayout)
         categoryCollectionView.backgroundColor = UIColor.redColor()
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         categoryCollectionView.showsHorizontalScrollIndicator = false
         categoryCollectionView.showsVerticalScrollIndicator = false
-        categoryCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        categoryCollectionView.registerClass(TopCell.self, forCellWithReuseIdentifier: "TopCell")
         self.addSubview(categoryCollectionView)
+    }
+    
+    func loadData(notification: NSNotification) {
+        let userInfo = notification.userInfo as! [String: AnyObject]
+        
+        cellModelList = userInfo["cellModelList"] as! [HomeCategoryCellModel]
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
 
 extension TopView : UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 15;
+        return cellModelList.count;
     }
     
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        cell = categoryCollectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as UICollectionViewCell
-        cell?.backgroundColor = UIColor.blueColor()
+        
+        cell = categoryCollectionView.dequeueReusableCellWithReuseIdentifier("TopCell", forIndexPath: indexPath) as? TopCell
+        cell!.bindModel((cellModelList[indexPath.row] ,indexPath.row))
+        
         return cell!
     }
 

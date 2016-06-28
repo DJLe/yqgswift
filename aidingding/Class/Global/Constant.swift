@@ -19,3 +19,10 @@ struct CellReuseIdentifier {
     static let Home = "HomeCell"
 
 }
+
+struct API {
+    static let APIHost = "http://apis.baidu.com/tngou/info/classify"
+    
+    static let HomeCategory = APIHost + "?" + ""
+
+}

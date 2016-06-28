@@ -33,6 +33,14 @@ class HomeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    typealias ModelType = (article: HomeCategoryCellModel, index: Int)
+    
+    func bindModel(model: ModelType) {
+        let article = model.article
+        let index = model.index
+        
+        labetext.text = article.name
+    }
     
     @IBAction func 购买(sender: AnyObject) {
         
