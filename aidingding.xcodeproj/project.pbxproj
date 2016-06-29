@@ -27,6 +27,7 @@
 		ADCDD2801D2251D2004F89D3 /* HomeCategoryJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD27F1D2251D2004F89D3 /* HomeCategoryJSONModel.swift */; };
 		ADCDD2821D2259F9004F89D3 /* HomeCategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD2811D2259F9004F89D3 /* HomeCategoryCellModel.swift */; };
 		ADCDD28A1D2264E7004F89D3 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD2891D2264E7004F89D3 /* TopCell.swift */; };
+		DDD6467E1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD6467D1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		ADCDD27F1D2251D2004F89D3 /* HomeCategoryJSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryJSONModel.swift; sourceTree = "<group>"; };
 		ADCDD2811D2259F9004F89D3 /* HomeCategoryCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryCellModel.swift; sourceTree = "<group>"; };
 		ADCDD2891D2264E7004F89D3 /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
+		DDD6467D1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXCouponListTableViewCellSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		AD680F2D1CC4CD2E0057FB34 /* aidingding */ = {
 			isa = PBXGroup;
 			children = (
+				DDD6467C1D23BA9C00506C47 /* new_pending */,
 				AD680F5C1CC4CE420057FB34 /* Class */,
 				AD680F661CC5E3520057FB34 /* Home */,
 				AD680F6A1CC5E3520057FB34 /* User */,
@@ -253,6 +256,14 @@
 			);
 			name = Global;
 			path = Class/Global;
+			sourceTree = "<group>";
+		};
+		DDD6467C1D23BA9C00506C47 /* new_pending */ = {
+			isa = PBXGroup;
+			children = (
+				DDD6467D1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift */,
+			);
+			path = new_pending;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADCDD2821D2259F9004F89D3 /* HomeCategoryCellModel.swift in Sources */,
+				DDD6467E1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift in Sources */,
 				AD680F7C1CC877A20057FB34 /* TopView.swift in Sources */,
 				AD680F311CC4CD2E0057FB34 /* ViewController.swift in Sources */,
 				AD680F6F1CC5E3960057FB34 /* HomeViewController.swift in Sources */,

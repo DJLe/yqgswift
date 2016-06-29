@@ -10,7 +10,7 @@ let JXCouponListTableViewCellSwiftReusedId  = "JXCouponListTableViewCellSwift"
 
 import UIKit
 
-class JXCouponListTableViewCellSwift: JXTableViewCell {
+class JXCouponListTableViewCellSwift: UITableViewCell {
 
     
     @IBOutlet weak var couponNameLabel: UILabel!
@@ -19,9 +19,11 @@ class JXCouponListTableViewCellSwift: JXTableViewCell {
     @IBOutlet weak var couponStatusLabel: UILabel!
     
     override func awakeFromNib() {
-       couponNameLabel.font = JXC_FONT_SMALL
+//       couponNameLabel.font = JXC_FONT_SMALL
         
     }
+    
+    /*
     
     // 重写 set 方法
     var couponModel :JXCouponModel? {
@@ -39,4 +41,8 @@ class JXCouponListTableViewCellSwift: JXTableViewCell {
         }
     }
 
+ 
+ */
+    
+    
 }
