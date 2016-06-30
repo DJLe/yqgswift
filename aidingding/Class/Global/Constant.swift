@@ -21,8 +21,9 @@ struct CellReuseIdentifier {
 }
 
 struct API {
-    static let APIHost = "http://apis.baidu.com/tngou/info/classify"
-    
-    static let HomeCategory = APIHost + "?" + ""
-
+    static let APIHost = "http://apis.baidu.com/tngou/info/"
+    //分类
+    static let HomeCategory = APIHost + "classify" + "?" + ""
+    //列表
+    static let HomeList = APIHost + "list" + "?" + "id="
 }
