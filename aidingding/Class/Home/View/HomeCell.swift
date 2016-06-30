@@ -33,19 +33,19 @@ class HomeCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    typealias ModelType = (article: HomeCategoryCellModel, index: Int)
+    typealias ModelType = (article: HomeListCellModel, index: Int)
     
     func bindModel(model: ModelType) {
         let article = model.article
-        let index = model.index
+//        let index = model.index
         
-        labetext.text = article.name
+        labetext.text = article.title
     }
     
     @IBAction func 购买(sender: AnyObject) {
         
         weak var tmpSelf = self
-        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector("tableHomeView:withButtonIndex:")) != nil) {
+        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector(#selector(HomeCellDelegate.tableHomeCell(_:withButtonIndex:)))) != nil) {
             tmpSelf!.delegate!.tableHomeCell!(tmpSelf!, withButtonIndex : 0)
         }
     }
@@ -54,7 +54,7 @@ class HomeCell: UITableViewCell {
     @IBAction func 收藏(sender: AnyObject) {
         
         weak var tmpSelf = self
-        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector("tableHomeView:withButtonIndex:")) != nil) {
+        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector(#selector(HomeCellDelegate.tableHomeCell(_:withButtonIndex:)))) != nil) {
             tmpSelf!.delegate!.tableHomeCell!(tmpSelf!, withButtonIndex : 1)
         }
     }
@@ -63,13 +63,12 @@ class HomeCell: UITableViewCell {
     @IBAction func 评论(sender: AnyObject) {
         
         weak var tmpSelf = self
-        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector("tableHomeView:withButtonIndex:")) != nil) {
+        if tmpSelf!.delegate != nil && ((tmpSelf!.delegate?.respondsToSelector(#selector(HomeCellDelegate.tableHomeCell(_:withButtonIndex:)))) != nil) {
             tmpSelf!.delegate!.tableHomeCell!(tmpSelf!, withButtonIndex : 2)
         }
     }
     
 }
-
 
 @objc protocol HomeCellDelegate: NSObjectProtocol {
     optional func tableHomeCell(homeCell: HomeCell, withButtonIndex buttonIndex :Int)

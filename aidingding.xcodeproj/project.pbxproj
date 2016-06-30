@@ -27,6 +27,7 @@
 		ADCDD2801D2251D2004F89D3 /* HomeCategoryJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD27F1D2251D2004F89D3 /* HomeCategoryJSONModel.swift */; };
 		ADCDD2821D2259F9004F89D3 /* HomeCategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD2811D2259F9004F89D3 /* HomeCategoryCellModel.swift */; };
 		ADCDD28A1D2264E7004F89D3 /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD2891D2264E7004F89D3 /* TopCell.swift */; };
+		ADCDD2901D24ADD8004F89D3 /* HomeListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCDD28F1D24ADD8004F89D3 /* HomeListCellModel.swift */; };
 		DDD6467E1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD6467D1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		ADCDD27F1D2251D2004F89D3 /* HomeCategoryJSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryJSONModel.swift; sourceTree = "<group>"; };
 		ADCDD2811D2259F9004F89D3 /* HomeCategoryCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCategoryCellModel.swift; sourceTree = "<group>"; };
 		ADCDD2891D2264E7004F89D3 /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
+		ADCDD28F1D24ADD8004F89D3 /* HomeListCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListCellModel.swift; sourceTree = "<group>"; };
 		DDD6467D1D23BA9C00506C47 /* JXCouponListTableViewCellSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXCouponListTableViewCellSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 		AD680F681CC5E3520057FB34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ADCDD28F1D24ADD8004F89D3 /* HomeListCellModel.swift */,
 				ADCDD2811D2259F9004F89D3 /* HomeCategoryCellModel.swift */,
 				ADCDD27F1D2251D2004F89D3 /* HomeCategoryJSONModel.swift */,
 			);
@@ -409,6 +412,7 @@
 				AD680F7C1CC877A20057FB34 /* TopView.swift in Sources */,
 				AD680F311CC4CD2E0057FB34 /* ViewController.swift in Sources */,
 				AD680F6F1CC5E3960057FB34 /* HomeViewController.swift in Sources */,
+				ADCDD2901D24ADD8004F89D3 /* HomeListCellModel.swift in Sources */,
 				ADCDD27C1D221150004F89D3 /* JSONModelMapper.swift in Sources */,
 				AD680F2F1CC4CD2E0057FB34 /* AppDelegate.swift in Sources */,
 				ADCDD2801D2251D2004F89D3 /* HomeCategoryJSONModel.swift in Sources */,

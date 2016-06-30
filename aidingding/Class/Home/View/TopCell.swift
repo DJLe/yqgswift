@@ -19,10 +19,10 @@ class TopCell: UICollectionViewCell {
         titleLabel = UILabel(frame: CGRectMake(0, 0, 80, 22))
         titleLabel?.numberOfLines = 0
         titleLabel?.font = UIFont.boldSystemFontOfSize(14.0)
-        titleLabel?.textColor = UIColor.whiteColor()
+        titleLabel?.textColor = UIColor.lightGrayColor()
         self.addSubview(titleLabel!)
     
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor.clearColor()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -33,7 +33,7 @@ class TopCell: UICollectionViewCell {
     
     func bindModel(model: ModelType) {
         let article = model.article
-        let index = model.index
+//        let index = model.index
         
         titleLabel!.text = article.name
         

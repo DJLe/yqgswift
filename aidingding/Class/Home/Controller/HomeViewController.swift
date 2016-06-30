@@ -12,26 +12,28 @@ class HomeViewController: UITableViewController {
     
     @IBOutlet weak var honeItem: UINavigationItem!
     
-//    private var categoryTableView : UICollectionView!
-//    
-//    private var flowLayout : UICollectionViewFlowLayout!
-    
     let cellHeight = ScreenHeight - 64 - 49 as CGFloat
     
-    var cellModelList = [HomeCategoryCellModel](){
+    var cellTopModelList = [HomeCategoryCellModel](){
+        didSet{
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("TopLoadDataNotification",
+                                                                      object: self, userInfo: ["cellTopModelList":cellTopModelList])
+            do{
+                try getListData(NSInteger(cellTopModelList[0].id))
+            }catch{
+                print("getListData:error")
+            }
+        }
+    }
+    
+    var cellModelList = [HomeListCellModel](){
         didSet{
             tableView.reloadData()
-            
-            NSNotificationCenter.defaultCenter().postNotificationName("loadDataNotification",
-                                                                      object: self, userInfo: ["cellModelList":cellModelList])
         }
     }
     
     var cellCount = 0;
-    
-    var jsonData = ["人生若只如初见，何事秋风悲画扇。曾经沧海难为水，除却巫山不是云。曾经沧海难为水，除却巫山不是云。","曾经沧海难为水，除却巫山不是云。","山重水复疑无路，柳暗花明又一村。","千岩万壑不辞劳，远看方知出处高。","白日何短短，百年苦易满。苍穹浩茫茫，万劫太极长。","行到水穷处，坐看云起时。","采菊东篱下，悠然见南山。","枯藤老树昏鸦，小桥流水人家，古道西风瘦马。","大漠孤烟直，长河落日圆。","劝君更尽一杯酒，西出阳关无故人。"]
-    
-    var topData = ["人生","曾经","山重","千岩","白日","行到","采菊","枯藤","大漠","劝君"]
     
     func getData(){
         
@@ -39,9 +41,24 @@ class HomeViewController: UITableViewController {
 
             if let jsonData = data, jsonModel = jsonData => HomeCategoryJSONModel.self {
                 
-//                self.cellCount = jsonModel.status
-                self.cellModelList = jsonModel.tngou.flatMap {
+                self.cellTopModelList = jsonModel.tngou.flatMap {
                     $0 => HomeCategoryCellModel.self
+                }
+            }
+        }
+
+    }
+    
+    func getListData(categoryid:NSInteger){
+        
+        let listAPI = API.HomeList + String(cellTopModelList[categoryid].id)
+        
+        getDataFromUrl(listAPI, method: .GET, parameter: nil) { data in
+            
+            if let jsonData = data, jsonModel = jsonData => HomeCategoryJSONModel.self {
+                
+                self.cellModelList = jsonModel.tngou.flatMap {
+                    $0 => HomeListCellModel.self
                 }
             }
         }
@@ -49,8 +66,9 @@ class HomeViewController: UITableViewController {
     }
     
     private func topCategoryTableView(){
-        
-        honeItem.titleView = TopView(frame: CGRectMake(0, 10, ScreenWidth, 44))
+        let topView = TopView(frame: CGRectMake(0, 10, ScreenWidth, 44))
+        topView.delegate = self;
+        honeItem.titleView = topView
     }
 
     override func viewDidLoad() {
@@ -193,8 +211,9 @@ extension HomeViewController {
 //
 //}
 
-extension HomeViewController : HomeCellDelegate {
-    
+extension HomeViewController : HomeCellDelegate, TopViewDelegate {
+
+//MARK: - HomeCellDelegate
     func tableHomeCell(homeCell: HomeCell, withButtonIndex buttonIndex: Int) {
         
         let inadexPath : NSIndexPath = self.tableView.indexPathForCell(homeCell)!
@@ -216,8 +235,10 @@ extension HomeViewController : HomeCellDelegate {
         }
     }
     
-
-
+//MARK: - TopViewDelegate
+    func topView(topView: TopView, withItemIndex itemIndex: Int) {
+        getListData(itemIndex)
+    }
 }
 
 
