@@ -39,9 +39,9 @@ extension Dictionary {
             if self[key as! Key] == nil {
                 switch key {
                 case "userHash":
-                    value = self["hash" as! Key]
-                //case "desc":
-                    //value = self["description" as! Key]
+                    value = self["hash" as! Key] //hash关键字重定义
+                case "descriptionNew":
+                    value = self["description" as! Key] //description关键字重定义
                 default:
                     return 
                 }

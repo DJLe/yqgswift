@@ -22,6 +22,8 @@ class HomeCell: UITableViewCell {
     
     @IBOutlet weak var 购买: UIButton!
     
+    @IBOutlet weak var textView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,6 +42,7 @@ class HomeCell: UITableViewCell {
 //        let index = model.index
         
         labetext.text = article.title
+        textView.text = article.descriptionNew
     }
     
     @IBAction func 购买(sender: AnyObject) {

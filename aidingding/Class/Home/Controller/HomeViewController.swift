@@ -29,6 +29,7 @@ class HomeViewController: UITableViewController {
     
     var cellModelList = [HomeListCellModel](){
         didSet{
+            tableView.setContentOffset(CGPointMake(0, -64), animated: true)
             tableView.reloadData()
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 
 class HomeListCellModel: NSObject {
     var count = 0
+    var descriptionNew = ""
     var fcount = 0
     var id = 0 as Int64
     var img = ""

@@ -102,6 +102,12 @@
                                                 <constraint firstAttribute="height" constant="20" id="9Tf-ng-7Rf"/>
                                             </constraints>
                                         </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hJ8-q5-wGm">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="232"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7bE-ez-P4h" firstAttribute="trailing" secondItem="oJT-q2-GQF" secondAttribute="trailingMargin" id="2kS-ew-JJj"/>
@@ -112,6 +118,9 @@
                                         <constraint firstItem="X0k-Vy-IC6" firstAttribute="top" secondItem="ERF-p6-Bys" secondAttribute="bottom" constant="8" id="Cz5-Mk-eUR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="X0k-Vy-IC6" secondAttribute="trailing" constant="-10" id="EQv-OW-HZj"/>
                                         <constraint firstItem="eEH-tI-YZ7" firstAttribute="trailing" secondItem="oJT-q2-GQF" secondAttribute="trailingMargin" constant="10" id="F2t-18-QVU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hJ8-q5-wGm" secondAttribute="trailing" constant="-8" id="JtH-c7-N1R"/>
+                                        <constraint firstItem="hJ8-q5-wGm" firstAttribute="top" secondItem="oJT-q2-GQF" secondAttribute="topMargin" constant="-8" id="LaT-iT-Fxp"/>
+                                        <constraint firstItem="X0k-Vy-IC6" firstAttribute="top" secondItem="hJ8-q5-wGm" secondAttribute="bottom" id="M69-gq-hz6"/>
                                         <constraint firstItem="X0k-Vy-IC6" firstAttribute="top" secondItem="7bE-ez-P4h" secondAttribute="top" constant="-8" id="N2c-xh-tVa"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MUT-Fp-DUJ" secondAttribute="trailing" constant="-10" id="RY2-9W-QNj"/>
                                         <constraint firstItem="MUT-Fp-DUJ" firstAttribute="leading" secondItem="oJT-q2-GQF" secondAttribute="leadingMargin" constant="-10" id="T5U-WZ-O8N"/>
@@ -120,6 +129,7 @@
                                         <constraint firstItem="MUT-Fp-DUJ" firstAttribute="top" secondItem="X0k-Vy-IC6" secondAttribute="bottom" id="TlQ-5T-Kfa"/>
                                         <constraint firstItem="98h-cN-AnN" firstAttribute="centerY" secondItem="ERF-p6-Bys" secondAttribute="centerY" id="XKN-oQ-tuo"/>
                                         <constraint firstItem="GUW-8I-iUZ" firstAttribute="centerY" secondItem="ERF-p6-Bys" secondAttribute="centerY" id="Ysj-bE-oPw"/>
+                                        <constraint firstItem="hJ8-q5-wGm" firstAttribute="leading" secondItem="oJT-q2-GQF" secondAttribute="leadingMargin" constant="-8" id="ZVd-bJ-JP0"/>
                                         <constraint firstItem="eEH-tI-YZ7" firstAttribute="leading" secondItem="oJT-q2-GQF" secondAttribute="leadingMargin" constant="-10" id="aYm-W6-3HW"/>
                                         <constraint firstItem="7bE-ez-P4h" firstAttribute="leading" secondItem="oJT-q2-GQF" secondAttribute="leadingMargin" id="e7d-e5-oAf"/>
                                         <constraint firstItem="ERF-p6-Bys" firstAttribute="leading" secondItem="oJT-q2-GQF" secondAttribute="leadingMargin" constant="8" id="gns-r6-3oC"/>
@@ -141,6 +151,7 @@
                                 <connections>
                                     <outlet property="cellImageView" destination="eEH-tI-YZ7" id="h9l-7a-8AF"/>
                                     <outlet property="labetext" destination="7bE-ez-P4h" id="alk-oS-eNV"/>
+                                    <outlet property="textView" destination="hJ8-q5-wGm" id="eov-IX-ae1"/>
                                     <outlet property="收藏" destination="98h-cN-AnN" id="2Vv-AB-A6x"/>
                                     <outlet property="评论" destination="ERF-p6-Bys" id="fFQ-wV-z9h"/>
                                     <outlet property="购买" destination="GUW-8I-iUZ" id="VBP-Nt-cwr"/>
